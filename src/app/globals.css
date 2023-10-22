@@ -3,25 +3,97 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+    --foreground-rgb: 0, 0, 0;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+    :root {
+        --foreground-rgb: 255, 255, 255;
+    }
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+    color: rgb(var(--foreground-rgb));
+    background: #f8f9fa;
+}
+
+.finder {
+    width: 300px;
+    border-right: 1px solid #ddd;
+    height: 100vh;
+    overflow: scroll;
+    overflow-x: hidden;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 999;
+}
+.header {
+    position: sticky;
+    top: 0;
+}
+.header input {
+    width: 100%;
+    height: 50px;
+    padding: 0 1em;
+    background: #464c52;
+    border-bottom: 1px solid #ddd;
+    color: #fff;
+}
+.finder-list-wrapper {
+    padding: 20px 20px 30px;
+    height: 100%;
+    background: #f8f9fa;
+}
+.finder-item {
+    display: flex;
+    align-items: center;
+    height: 70px;
+    gap: 10px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.04);
+    margin-bottom: 10px;
+    padding: 20px;
+}
+.container {
+    padding-top: 30px;
+    padding-left: 320px;
+    position: relative;
+}
+
+.loading {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #000;
+    color: #fff;
+    width: 140px;
+    padding: 1em;
+    border-radius: 8px;
+}
+.card-list-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+.card-list {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    max-width: 1000px;
+}
+.recipe-card {
+    width: 300px;
+    border: 1px solid #ddd;
+    padding: 30px 24px;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.04);
+}
+.recipe-card .recipe-title {
+    font-weight: bold;
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+    border-bottom: 1px solid #ddd;
 }
