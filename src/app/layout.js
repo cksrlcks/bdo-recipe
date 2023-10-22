@@ -4,6 +4,7 @@ import React from "react";
 import Cheerio from "cheerio";
 import ItemProvder from "../context/ItemProvider";
 import "./globals.css";
+import Link from "next/link";
 const notoSans = Noto_Sans_KR({
     weight: ["400", "500", "600"],
     subsets: ["latin"],
@@ -43,7 +44,14 @@ export default async function RootLayout({ children }) {
                 <div id="app">
                     <ItemProvder>
                         <Finder initialData={data} />
-                        <main className="container">{children}</main>
+                        <main className="container">
+                            <div className="home-bar">
+                                <Link href="/" className="home-icon">
+                                    홈
+                                </Link>
+                            </div>
+                            {children}
+                        </main>
                     </ItemProvder>
                 </div>
             </body>
