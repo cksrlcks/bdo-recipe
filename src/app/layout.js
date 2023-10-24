@@ -1,10 +1,11 @@
-import { Noto_Sans_KR } from "next/font/google";
-import Finder from "../component/Finder";
 import React from "react";
+import Finder from "../component/Finder";
 import ItemProvder from "../context/ItemProvider";
-import SwrWrapper from '../component/SwrWrapper'
+import SwrWrapper from "../component/SwrWrapper";
+import Nav from "../component/Nav";
+import { Noto_Sans_KR } from "next/font/google";
 import "./globals.css";
-import Link from "next/link";
+
 const notoSans = Noto_Sans_KR({
     weight: ["400", "500", "600"],
     subsets: ["latin"],
@@ -21,17 +22,13 @@ export default async function RootLayout({ children }) {
             <body className={notoSans.className}>
                 <div id="app">
                     <SwrWrapper>
-                    <ItemProvder>
-                        <Finder />
-                        <main className="container">
-                            <div className="home-bar">
-                                <Link href="/" className="home-icon">
-                                    홈
-                                </Link>
-                            </div>
-                            {children}
-                        </main>
-                    </ItemProvder>
+                        <ItemProvder>
+                            <Finder />
+                            <main className="container">
+                                <Nav />
+                                {children}
+                            </main>
+                        </ItemProvder>
                     </SwrWrapper>
                 </div>
             </body>
