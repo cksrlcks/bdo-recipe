@@ -1,8 +1,8 @@
 import { Noto_Sans_KR } from "next/font/google";
 import Finder from "../component/Finder";
 import React from "react";
-import Cheerio from "cheerio";
 import ItemProvder from "../context/ItemProvider";
+import SwrWrapper from '../component/SwrWrapper'
 import "./globals.css";
 import Link from "next/link";
 const notoSans = Noto_Sans_KR({
@@ -14,36 +14,15 @@ export const metadata = {
     title: "검은사막 - 나의 레시피",
     description: "검은사막 - 레시피",
 };
-const fetchAllData = async () => {
-    const res = await fetch("https://bdocodex.com/query.php?a=recipes&type=alchemy&l=kr", {
-        headers: {
-            "Content-Type": "application/json",
-            cache: "force-cache",
-        },
-    });
-
-    const data = await res.json();
-    const formatted = data.aaData.map((item) => {
-        return {
-            id: item[0],
-            name: Cheerio.load(item[2]).text(),
-            iconUrl: Cheerio.load(item[1])
-                .text()
-                .match(/(?<=src\=")(.*?)(?=\")/g),
-        };
-    });
-
-    return formatted;
-};
 
 export default async function RootLayout({ children }) {
-    const data = await fetchAllData();
     return (
         <html lang="ko">
             <body className={notoSans.className}>
                 <div id="app">
+                    <SwrWrapper>
                     <ItemProvder>
-                        <Finder initialData={data} />
+                        <Finder />
                         <main className="container">
                             <div className="home-bar">
                                 <Link href="/" className="home-icon">
@@ -53,6 +32,7 @@ export default async function RootLayout({ children }) {
                             {children}
                         </main>
                     </ItemProvder>
+                    </SwrWrapper>
                 </div>
             </body>
         </html>
