@@ -6,10 +6,7 @@ import List from "./List";
 
 
 export default function Finder() {
-    //const {data, error} = useSWR('/api/recipe')   
     const [sw, setSw] = useState("");
-    //const filteredList = sw ? initialData.filter((item) => item.name.includes(sw)) : initialData;
-
     return (
         <div className="finder">
             <Header sw={sw} setSw={setSw} />
