@@ -21,6 +21,22 @@ export default function page() {
                 <li>잡초 = 야생들풀</li>
                 <li>정제수 = 증류수</li>
             </ul>
+            <br />
+            <br />
+            <hr />
+            <br />
+            <br />
+            <h2 className="font-bold mb-1">브란디오 버섯 종류</h2>
+            <ul>
+                <li>점쟁이 버섯</li>
+                <li>화살 버섯</li>
+                <li>난쟁이 버섯</li>
+                <li>구름 버섯</li>
+                <li>하늘 버섯</li>
+                <li>호랑이 버섯</li>
+                <li>황제 버섯</li>
+                <li>유령 버섯</li>
+            </ul>
     </div>
   )
 }
