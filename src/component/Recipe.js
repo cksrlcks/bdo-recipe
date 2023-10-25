@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import useSWR from "swr";
+import ItemIcon from "./ItemIcon";
 import { RiHeartFill, RiAddCircleFill } from "react-icons/ri";
 
 const getLink = (array, name) => {
@@ -10,7 +11,6 @@ const getLink = (array, name) => {
 
 export default function Recipe({ data }) {
     const [like, setLike] = useState(false);
-    console.log(data);
     return (
         <div>
             {data && (
@@ -26,11 +26,11 @@ export default function Recipe({ data }) {
                     </div>
                     <div className="recipe-card">
                         <figure className="recipe-icon">
-                            <img src={`https://bdocodex.com/${data.iconUrl[0]}`} alt="icon" />
+                            <ItemIcon url={data.iconUrl} name={data.name} width={30} height={30}/>
                         </figure>
                         <div className="recipe-title">{data.name}</div>
                         <ul>
-                            {data.sub.ingredients.map((item, idx) => (
+                            {data.sub.map((item, idx) => (
                                 <Item name={item.name} quantity={item.quantity} iconUrl={item.url} key={idx} />
                             ))}
                         </ul>
@@ -50,7 +50,7 @@ function Item({ name, quantity, iconUrl }) {
         return (
             <li>
                 <figure className="icon">
-                    <img src={`https://bdocodex.com/${iconUrl}`} alt="icon" />
+                    <ItemIcon url={iconUrl} name={name} width={30} height={30}/>
                 </figure>
                 <div className="name">
                     <Link href={`/recipe/${link}`} className="underline">
@@ -64,7 +64,7 @@ function Item({ name, quantity, iconUrl }) {
     return (
         <li>
             <figure className="icon">
-                <img src={`https://bdocodex.com/${iconUrl}`} alt="icon" />
+                <ItemIcon url={iconUrl} name={name} width={30} height={30}/>
             </figure>
             <div className="name">{name}</div>
             <div className="number">{quantity}</div>

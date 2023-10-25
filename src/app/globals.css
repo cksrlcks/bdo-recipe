@@ -18,13 +18,14 @@ body {
 }
 .nav {
     display: flex;
+    align-items: center;
     gap: 14px;
     font-size: 24px;
     position: fixed;
     right: 20px;
     bottom: 20px;
     background: #191b1f;
-    padding: 20px 24px;
+    padding: 14px 24px;
     border-radius: 9999px;
 }
 .nav a {
@@ -32,6 +33,49 @@ body {
 }
 .nav .active {
     opacity: 1;
+}
+.nav .avatar{   
+    margin-right: -10px;
+    position: relative;
+}
+.nav .avatar .frame{
+    width:28px; 
+    height:28px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.nav .avatar .tooltip{
+    position: absolute;
+    left:50%;
+    transform: translateX(-50%);
+    top:-45px;
+    padding:0 14px;
+    height:40px;
+    font-size: 13px;
+    white-space: nowrap;
+    background:#000;
+    border-radius: 8px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: 500;
+    display:none;
+    z-index: 1;
+}
+.nav .avatar:hover .tooltip{
+    display:flex;
+}
+.nav .avatar .tooltip:after{
+    content:"";
+    display:block;
+    border-right:10px solid transparent;
+    border-left:10px solid transparent;
+    border-top:10px solid #000;
+    position: absolute;
+    left:50%;
+    transform: translateX(-50%);
+    bottom:-6px;
 }
 .home-icon {
     width: 40px;

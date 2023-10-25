@@ -1,7 +1,7 @@
 import React from "react";
 import Finder from "../component/Finder";
-import ItemProvder from "../context/ItemProvider";
-import SwrWrapper from "../component/SwrWrapper";
+import SWRConfigContext from "../provider/SWRConfigContext";
+import AuthContext from "../provider/Auth";
 import Nav from "../component/Nav";
 import { Noto_Sans_KR } from "next/font/google";
 import "./globals.css";
@@ -21,15 +21,15 @@ export default async function RootLayout({ children }) {
         <html lang="ko">
             <body className={notoSans.className}>
                 <div id="app">
-                    <SwrWrapper>
-                        <ItemProvder>
+                    <AuthContext>
+                        <SWRConfigContext>
                             <Finder />
                             <main className="container">
                                 <Nav />
                                 {children}
                             </main>
-                        </ItemProvder>
-                    </SwrWrapper>
+                        </SWRConfigContext>
+                    </AuthContext>
                 </div>
             </body>
         </html>

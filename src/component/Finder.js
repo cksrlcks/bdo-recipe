@@ -1,6 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import { useItem } from "../context/ItemContext";
+import React, { useState } from "react";
 import Header from "./Header";
 import List from "./List";
 

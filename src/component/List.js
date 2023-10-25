@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import useSWR from "swr";
 import Link from "next/link";
+import ItemIcon from '../component/ItemIcon'
 
 export default function List({ sw }) {
     const { data, isLoading, error } = useSWR("/api/recipe");
@@ -16,7 +17,7 @@ export default function List({ sw }) {
             {filteredList.map((item) => {
                 return (
                     <Link key={item.id} href={`/recipe/${item.id}`} className="finder-item">
-                        <img src={`https://bdocodex.com${item.iconUrl}`} alt="" />
+                        <ItemIcon url={item.iconUrl} width={40} height={40} name={item.name}/>
                         {item.name}
                     </Link>
                 );

@@ -1,7 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import useSWR from "swr";
-import { useItem } from "../../../context/ItemContext";
 
 export default function page({ params }) {
     const { data } = useSWR("/api/recipe");
