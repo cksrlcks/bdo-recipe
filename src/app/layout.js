@@ -3,6 +3,7 @@ import Finder from "../component/Finder";
 import SWRConfigContext from "../provider/SWRConfigContext";
 import AuthContext from "../provider/Auth";
 import Nav from "../component/Nav";
+import ScrollToTop from '../component/ScrollToTop'
 import { Noto_Sans_KR } from "next/font/google";
 import "./css/globals.css";
 
@@ -18,6 +19,7 @@ export const metadata = {
         width: 'device-width',
         initialScale: 1,
         maximumScale: 1,
+        viewportFit : 'cover'
       },
 };
 
@@ -31,6 +33,7 @@ export default async function RootLayout({ children }) {
                             <Finder />
                             <main className="container">
                                 <Nav />
+                                <ScrollToTop />
                                 {children}
                                 <footer className="footer">
                                     <div className="hash-list">

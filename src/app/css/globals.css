@@ -3,7 +3,19 @@
 @tailwind utilities;
 html{overflow-x: hidden;}
 body{color:#fff;background:#111213; overflow-x: hidden;}
+/* 웹뷰보정*/
+@media screen and (max-width:1200px){
+    body {
+        -webkit-text-size-adjust:none; /* 디바이스 환경별 글자커짐 방지 */
+        -webkit-overflow-scrolling: touch; /* safari 스크롤 보정 */
+    }
 
+    * {
+        user-select: none;
+        -webkit-touch-callout: none;
+        -webkit-tap-highlight-color:rgba(255,255,255,0);
+    }
+}
 /* footer */
 .footer{font-size:13px;letter-spacing:-.05em;position:fixed;left:360px;bottom:30px}
 .footer .hash-list{display:flex;gap:8px}
@@ -16,7 +28,7 @@ body{color:#fff;background:#111213; overflow-x: hidden;}
 .home{max-width:920px;margin:0 auto}
 .home img{width:100%}
 @media screen and (max-width:1200px) {
-    .home{height: 90vh; display: flex; align-items: center; justify-content: center;}
+    .home{height: 68vh; display: flex; align-items: center; justify-content: center;}
     .home img{transform: scale(1.4);}
 }
 /* nav */
@@ -35,7 +47,8 @@ body{color:#fff;background:#111213; overflow-x: hidden;}
 
 /* side bar */
 .finder{width:300px;border-radius:12px;height:calc(100% - 40px);overflow:hidden;position:fixed;left:20px;top:20px;z-index:999;background:#191b1f;padding:16px;display:flex;flex-direction:column;gap:10px}
-.header input{width:100%;height:50px;padding:0 1.2em;background:#000;border-radius:8px;color:#fff;font-size:15px}
+.header input{width:100%;height:50px;padding:0 1.2em;background:#000;border-radius:8px;color:#fff;font-size:15px; -webkit-appearance:none; appearance: none; outline: none;}
+.header input:focus{outline: 1px solid #fff;}
 .header .search{position:relative}
 .header .reset-btn{display:flex;width:24px;height:24px;background:#fff;border-radius:50%;align-items:center;justify-content:center;color:#000;font-size:20px;position:absolute;right:8px;top:50%;transform:translateY(-50%)}
 .finder-list-wrapper{height:100%;flex:1;overflow:scroll;overflow-x:hidden}
@@ -46,7 +59,7 @@ body{color:#fff;background:#111213; overflow-x: hidden;}
 .finder-item:hover{background:#111}
 .finder-item img{height:32px;width:auto}
 @media screen and (max-width:1200px) {
-    .finder{top:0; left:0; width:100%; height: auto; border-radius: 0 0 8px 8px;}
+    .finder{top:0; left:0; width:100%; max-height: 100%; height: auto; border-radius: 0 0 8px 8px;}
     .finder-list-wrapper{display:none;}
     .finder-list-wrapper.on{display:block;}
 }
@@ -54,7 +67,7 @@ body{color:#fff;background:#111213; overflow-x: hidden;}
 /* contents */
 .container{max-width:100%;width:100%;position:relative;padding:30px 30px 100px 360px}
 @media screen and (max-width:1200px) {
-    .container{padding:40px 16px;}
+    .container{padding:100px 16px 100px;}
 }
 
 /* recipes */
