@@ -9,7 +9,7 @@ export default function Finder() {
     return (
         <div className="finder">
             <Header sw={sw} setSw={setSw} />
-            <List sw={sw}/>
+            <List sw={sw} setSw={setSw}/>
         </div>
     );
 }
