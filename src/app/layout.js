@@ -27,6 +27,19 @@ export default async function RootLayout({ children }) {
                             <main className="container">
                                 <Nav />
                                 {children}
+                                <footer className="footer">
+                                    <div className="hash-list">
+                                        <div className="hash">
+                                            # 부산에 거주하는 광기의 웹디자이너의 취미작
+                                        </div>
+                                        <div className="hash">
+                                            <a href="https://black.inven.co.kr/" target="_blank"># 검벤 바로가기</a>
+                                        </div>
+                                        <div className="hash">
+                                            <a href="https://payment.kr.playblackdesert.com/Shop/Coupon/" target="_blank"># 검사쿠폰등록 바로가기</a>
+                                        </div>
+                                    </div>
+                                </footer>
                             </main>
                         </SWRConfigContext>
                     </AuthContext>

@@ -1,6 +1,13 @@
 "use client";
+import Image from "next/image";
 import React from "react";
 
 export default function Home() {
-    return <div>광기의 웹디자이너가 빡쳐서 만든 제작노트</div>;
+    return (
+        <div className="home">
+            <figure className="logo">
+                <Image src="/img/logo.png" width={1500} height={1261} alt="bdo recipe"/>
+            </figure>
+        </div>
+    );
 }

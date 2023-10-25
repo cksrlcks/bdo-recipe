@@ -16,6 +16,32 @@ body {
     color: #fff;
     background: #111213;
 }
+.footer{
+    font-size:13px;
+    letter-spacing: -0.05em;
+    position: fixed;
+    left:360px;
+    bottom:30px;
+}
+.footer .hash-list{
+    display:flex;
+    gap:8px;
+}
+.footer .hash-list .hash{
+    opacity: 0.4;
+    transition: all 0.2s;
+}
+.footer .hash-list .hash:has(a):hover{
+    opacity: 1;
+    color:#00ff22
+}
+.home{
+    max-width: 920px;
+    margin:0 auto;
+}
+.home img{
+    width:100%;
+}
 .nav {
     display: flex;
     align-items: center;
