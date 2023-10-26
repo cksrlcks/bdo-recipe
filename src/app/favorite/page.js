@@ -18,6 +18,7 @@ export default function page() {
             <div>
                 {!me && !isLoading && <div className="ment">오른쪽 아래 자물쇠 버튼을 눌러서 로그인</div>}
                 {isLoading && <div className="ment">사용자 정보를 가져오는중...</div>}
+                {me?.like.length == 0 && <div className="ment">즐겨찾기 된 레시피가 없어요</div>}
                 <div className="card-list">
                     {me?.like.map((likeItem, idx) => {
                         const data = recipes?.filter((item) => item.id == likeItem)[0];
