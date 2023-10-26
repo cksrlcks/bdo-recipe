@@ -22,7 +22,7 @@ export default function List({ sw, setSw }) {
             {!isLoading && !filteredList.length && <div className="loading">검색결과가 없습니다.</div>}
             {filteredList.map((item) => {
                 return (
-                    <Link key={item.id} href={`/recipe/${item.id}`} className="finder-item">
+                    <Link key={item.id} href={`/recipe/${item.id}`} className="finder-item" onClick={handleSearch}>
                         <ItemIcon url={item.iconUrl} width={40} height={40} name={item.name}/>
                         {item.name}
                     </Link>
