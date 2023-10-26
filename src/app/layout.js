@@ -21,6 +21,9 @@ export const metadata = {
         maximumScale: 1,
         viewportFit: "cover",
     },
+    themeColor : {
+        content : '#191b1f'
+    }
 };
 
 export default async function RootLayout({ children }) {

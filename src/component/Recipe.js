@@ -2,25 +2,21 @@
 import React, { useState } from "react";
 import useMe from "../hooks/useMe";
 import Link from "next/link";
-import useSWR from "swr";
 import ItemIcon from "./ItemIcon";
-import { RiHeartFill, RiAddCircleFill } from "react-icons/ri";
-const getLink = (array, name) => {
-    return array.filter((item) => item.name == name)[0]?.id;
-};
+import Item from "../component/Item";
 
+import { RiHeartFill, RiAddCircleFill } from "react-icons/ri";
 export default function Recipe({ data }) {
-    const [like, setLike] = useState(false);
-    const { me, isLoading, error } = useMe();
+    const { me, isLoading,  setLike } = useMe();
+    const like = me?.like?.includes(data.id)
     const handleLike = () => {
-        // if (!me) {
-        //     return alert("로그인이 필요합니다.");
-        // }
-        // if (me?.like?.filter((item) => item == data.id).length) {
-        //     console.log("제거");
-        // } else {
-        //     console.log("추가");
-        // }
+        if(isLoading){
+            return alert("정보를 가져오는중입니다.");
+        }
+        if (!me) {
+            return alert("로그인이 필요합니다.");
+        }
+        setLike(data.id, !like)
     };
     return (
         <div>
@@ -28,7 +24,7 @@ export default function Recipe({ data }) {
                 <>
                     <div className="card-list-title">{data.name} 제작 레시피</div>
                     <div className="tool-bar">
-                        <button type="button" className={`tool-btn favorite ${like ? "on" : ""}`} onClick={handleLike} disabled={isLoading ? "disabled" : ""}>
+                        <button type="button" className={`tool-btn favorite ${like ? "on" : ""}`} onClick={handleLike}>
                             <RiHeartFill /> <span>즐겨찾기</span>
                         </button>
                         <Link href={`/recipes/${data.id}`} className="tool-btn detail">
@@ -52,33 +48,3 @@ export default function Recipe({ data }) {
     );
 }
 
-function Item({ name, quantity, iconUrl }) {
-    const { data: allDatas } = useSWR("/api/recipe");
-    const link = getLink(allDatas, name);
-
-    if (!name) return "";
-    if (link) {
-        return (
-            <li>
-                <figure className="icon">
-                    <ItemIcon url={iconUrl} name={name} width={30} height={30} />
-                </figure>
-                <div className="name">
-                    <Link href={`/recipe/${link}`} className="underline">
-                        {name}
-                    </Link>
-                </div>
-                <div className="number">{quantity}</div>
-            </li>
-        );
-    }
-    return (
-        <li>
-            <figure className="icon">
-                <ItemIcon url={iconUrl} name={name} width={30} height={30} />
-            </figure>
-            <div className="name">{name}</div>
-            <div className="number">{quantity}</div>
-        </li>
-    );
-}
