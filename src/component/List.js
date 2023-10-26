@@ -2,8 +2,7 @@
 import React, { useState, useEffect } from "react";
 import useSWR from "swr";
 import Link from "next/link";
-import ItemIcon from '../component/ItemIcon'
-import ItemIcon from '../component/ItemIcon'
+import ItemIcon from '../component/ItemIcon';
 
 export default function List({ sw, setSw }) {
     const { data, isLoading, error } = useSWR("/api/recipe");

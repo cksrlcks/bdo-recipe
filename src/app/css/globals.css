@@ -97,9 +97,10 @@ body{color:#fff;background:#111213; overflow-x: hidden;}
 .tool-btn{display:flex;align-items:center;justify-content:center;gap:8px;height:38px;border-radius:6px;background:#333;padding:0 12px;font-size:14px;line-height:40px;transition:all .2s}
 .tool-btn span{font-size:14px;font-weight:500}
 .tool-btn svg{font-size:18px}
+.tool-btn.favorite:disabled{opacity: 0.2;}
 .tool-btn.favorite.on{border:none;background:rgba(255,0,170,0.2);color:#f0a}
 .tool-btn.favorite.on:hover{background:rgba(255,0,170,0.8);border:none;color:#fff}
-.tool-btn.favorite{border:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.5);background:none}
+.tool-btn.favorite{border:1px solid rgba(255,255,255,0.4);color:rgba(255,255,255,0.7);background:none}
 .tool-btn.favorite:hover{border:1px solid rgba(255,255,255,0.5);color:rgba(255,255,255,0.7);background:none}
 .tool-btn.detail{background:rgba(0,255,34,0.2);color:#0f2}
 .tool-btn.detail:hover{background:rgba(0,255,34,0.8);color:#fff}

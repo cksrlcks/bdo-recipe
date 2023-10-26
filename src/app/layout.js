@@ -1,9 +1,9 @@
 import React from "react";
 import Finder from "../component/Finder";
-import SWRConfigContext from "../provider/SWRConfigContext";
-import AuthContext from "../provider/Auth";
+import SWRConfigContext from "../context/SWRConfigContext";
+import AuthContext from "../context/Auth";
 import Nav from "../component/Nav";
-import ScrollToTop from '../component/ScrollToTop'
+import ScrollToTop from "../component/ScrollToTop";
 import { Noto_Sans_KR } from "next/font/google";
 import "./css/globals.css";
 
@@ -16,11 +16,11 @@ export const metadata = {
     title: "검은사막 - 나의 레시피",
     description: "검은사막 - 레시피",
     viewport: {
-        width: 'device-width',
+        width: "device-width",
         initialScale: 1,
         maximumScale: 1,
-        viewportFit : 'cover'
-      },
+        viewportFit: "cover",
+    },
 };
 
 export default async function RootLayout({ children }) {
