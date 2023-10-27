@@ -5,7 +5,7 @@ import AuthContext from "../context/Auth";
 import Nav from "../component/Nav";
 import ScrollToTop from "../component/ScrollToTop";
 import { Noto_Sans_KR } from "next/font/google";
-import "./css/globals.css";
+import "./css/globals.css"; 
 
 const notoSans = Noto_Sans_KR({
     weight: ["400", "500", "600"],
@@ -27,6 +27,18 @@ export const metadata = {
 export default async function RootLayout({ children }) {
     return (
         <html lang="ko">
+            <head>
+                <link rel="icon" href="/favicon.ico" sizes="any" />
+                <link
+                    rel="icon"
+                    href="/favicon.svg"
+                    type="image/svg"
+                    />
+                <link
+                rel="apple-touch-icon"
+                href="/favicon.png"
+                />
+            </head>
             <body className={notoSans.className}>
                 <div id="app">
                     <AuthContext>
