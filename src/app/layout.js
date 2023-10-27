@@ -21,24 +21,12 @@ export const metadata = {
         maximumScale: 1,
         viewportFit: "cover",
     },
-    themeColor : '#191b1f'
+    themeColor : '#191b1f',
 };
 
 export default async function RootLayout({ children }) {
     return (
         <html lang="ko">
-            <head>
-                <link rel="icon" href="/favicon.ico" sizes="any" />
-                <link
-                    rel="icon"
-                    href="/favicon.svg"
-                    type="image/svg"
-                    />
-                <link
-                rel="apple-touch-icon"
-                href="/favicon.png"
-                />
-            </head>
             <body className={notoSans.className}>
                 <div id="app">
                     <AuthContext>
