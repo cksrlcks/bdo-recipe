@@ -8,16 +8,18 @@ import { RiHomeSmile2Fill, RiHeartFill, RiQuestionLine, RiLock2Fill } from "reac
 export default function Nav() {
     return (
         <nav className="nav">
-            <NavLink href="/">
-                <RiHomeSmile2Fill />
-            </NavLink>
-            <NavLink href="/favorite">
-                <RiHeartFill />
-            </NavLink>
-            <NavLink href="/tip">
-                <RiQuestionLine />
-            </NavLink>
-            <AvatarButton />
+            <div className="nav-inner">
+                <NavLink href="/">
+                    <RiHomeSmile2Fill />
+                </NavLink>
+                <NavLink href="/favorite">
+                    <RiHeartFill />
+                </NavLink>
+                <NavLink href="/tip">
+                    <RiQuestionLine />
+                </NavLink>
+                <AvatarButton />
+            </div>
         </nav>
     );
 }
