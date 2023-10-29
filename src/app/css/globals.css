@@ -300,13 +300,13 @@ body {
         padding: 100px 16px 100px;
     }
 }
-
-/* recipes */
-.card-list-title {
+.page-title {
     font-size: 20px;
     font-weight: 700;
     margin-bottom: 30px;
 }
+
+/* recipes */
 .card-list {
     display: flex;
     gap: 10px;
@@ -522,10 +522,23 @@ body {
 }
 
 .tip-card{
+    max-width: 600px;
     padding: 30px 24px;
     border-radius: 8px;
     background: #191b1f;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.04);
+}
+.tip-card.green{
+    background:#111 linear-gradient(188.76deg, rgba(11, 142, 81, 0.3) -13.88%, rgba(19, 17, 28, 0.4) 123.85%);
+    border:1px solid rgb(28, 54, 42);
+}
+.tip-card.blue{
+    background:#111 linear-gradient(rgb(11, 21, 40), rgb(19, 17, 28));
+    border:1px solid rgb(24, 51, 103);
+}
+.tip-card.purple{
+    background:#111 linear-gradient(rgb(31, 19, 42), rgb(19, 17, 28));
+    border:1px solid  rgb(61, 34, 89);
 }
 .tip-card + .tip-card{
     margin-top:20px;

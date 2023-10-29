@@ -1,10 +1,11 @@
 import React from "react";
+import PageTitle from "../../component/PageTitle";
 
 export default function page() {
     return (
-        <div>
-            <div className="card-list-title">검은사막 연금 팁</div>
-            <div className="tip-card">
+        <>
+            <PageTitle>검은사막 연금 팁</PageTitle>
+            <div className="tip-card blue">
                 <h2 className="tip-title">피 대체</h2>
                 <ul>
                     <li>양 = 사슴 = 소 = 돼지 = 와라곤 = 염소 = 라마</li>
@@ -13,14 +14,14 @@ export default function page() {
                     <li>여우 = 족제비 = 너구리 = 원숭이 = 전갈</li>
                 </ul>
             </div>
-            <div className="tip-card">
+            <div className="tip-card blue">
                 <h2 className="tip-title">기타 대체</h2>
                 <ul>
                     <li>잡초 = 야생들풀</li>
                     <li>정제수 = 증류수</li>
                 </ul>
             </div>
-            <div className="tip-card">
+            <div className="tip-card green">
                 <h2 className="tip-title">NPC 마노(발레시아 창고지기 앞) 약초상인</h2>
                 <ul>
                   <li>여명초</li>
@@ -30,7 +31,7 @@ export default function page() {
                   <li>비단 꿀풀</li>
                 </ul>
             </div>
-            <div className="tip-card">
+            <div className="tip-card purple">
                 <h2 className="tip-title">NPC 브란디오(칼페온 창고지기 옆) 버섯상인</h2>
                 <ul>
                     <li>점쟁이 버섯</li>
@@ -43,6 +44,6 @@ export default function page() {
                     <li>유령 버섯</li>
                 </ul>
             </div>
-        </div>
+        </>
     );
 }
